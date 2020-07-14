@@ -62,8 +62,8 @@ object messageConsumer {
    val fileSaver = messageFlattenDf.writeStream
       .outputMode("append")
       .format("parquet")
-      .partitionBy("violationCode")
-      .option("path","src/main/resources/output/")//todo hadoop path
+      //.partitionBy("violationCode")
+      .option("path","src/main/resources/output/droneMsg")//hadoop path
       .option("checkpointLocation", "src/main/resources/chkpoint")
       .start()
 
